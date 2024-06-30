@@ -2,10 +2,11 @@ package internal.api.backend.library.client;
 
 import java.util.Map;
 
-public interface ExternalBookAPIClient<T> {
+public interface ExternalBookAPIClient {
 
-    //key is the ISBN, value is the full title of the edition
-    Map<String, String> getISBNsByTitle(String title);
+    Map<String, String> mapISBNsToTitles(String title);
 
-    T getBookByISBN();
+    BookResponse getBookByISBN(String isbn);
+
+    String getCoverURL(String isbn);
 }
