@@ -1,9 +1,7 @@
 package internal.api.backend.users.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import internal.api.backend.library.entity.UserLibrary;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,9 +24,14 @@ public class User implements UserDetails {
     @Column(name = "password")
     private String password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_library_id")
+    private UserLibrary userLibrary;
+
     public User(String email, String password){
         this.email = email;
         this.password = password;
+        this.userLibrary = new UserLibrary(this);
     }
 
     @Override
