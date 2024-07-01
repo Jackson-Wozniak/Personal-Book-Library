@@ -28,7 +28,7 @@ public class UserLibraryEntry {
     @Enumerated(value = EnumType.STRING)
     private OwnedBookSource source;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "book_title", nullable = false)
     private OwnedBook ownedBook;
 

@@ -4,3 +4,4 @@ mvnw.cmd
 mvnw
 HELP.md
 **/target/
+logs/

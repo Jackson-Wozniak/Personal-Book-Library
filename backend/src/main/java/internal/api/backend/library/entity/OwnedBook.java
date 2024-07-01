@@ -1,6 +1,6 @@
 package internal.api.backend.library.entity;
 
-import internal.api.backend.library.enums.OwnedBookSource;
+import internal.api.backend.library.entity.listener.OwnedBookListener;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +17,7 @@ There will be other entities that store more information about books (using the 
 @Getter
 @Setter
 @NoArgsConstructor
+@EntityListeners(OwnedBookListener.class)
 public class OwnedBook {
 
     @Id

@@ -1,6 +1,7 @@
 package internal.api.backend.users.entity;
 
 import internal.api.backend.library.entity.UserLibrary;
+import internal.api.backend.users.entity.listener.UserListener;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@EntityListeners(UserListener.class)
 public class User implements UserDetails {
 
     @Id
