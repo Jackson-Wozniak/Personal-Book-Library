@@ -20,14 +20,10 @@ There will be other entities that store more information about books (using the 
 public class OwnedBook {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String isbn;
 
     @Column(name = "title")
     private String title;
-
-    @Column(name = "isbn")
-    private String isbn;
 
     @Column(name = "author")
     private String author;
@@ -35,18 +31,13 @@ public class OwnedBook {
     @Column(name = "number_of_pages")
     private Integer pageCount;
 
-    @Enumerated(value = EnumType.STRING)
-    private OwnedBookSource source;
-
     public OwnedBook(String title,
                      String isbn,
                      String author,
-                     Integer pageCount,
-                     OwnedBookSource source) {
+                     Integer pageCount) {
         this.title = title;
         this.isbn = isbn;
         this.author = author;
         this.pageCount = pageCount;
-        this.source = source;
     }
 }

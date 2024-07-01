@@ -1,5 +1,6 @@
 package internal.api.backend.library.entity;
 
+import internal.api.backend.library.enums.OwnedBookSource;
 import internal.api.backend.library.enums.OwnedBookStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -24,13 +25,18 @@ public class UserLibraryEntry {
     @Enumerated(value = EnumType.STRING)
     private OwnedBookStatus status;
 
+    @Enumerated(value = EnumType.STRING)
+    private OwnedBookSource source;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "book_title", nullable = false)
     private OwnedBook ownedBook;
 
-    public UserLibraryEntry(UserLibrary library, OwnedBook ownedBook, OwnedBookStatus status){
+    public UserLibraryEntry(UserLibrary library, OwnedBook ownedBook,
+                            OwnedBookSource source, OwnedBookStatus status){
         this.userLibrary = library;
         this.ownedBook = ownedBook;
+        this.source = source;
         this.status = status;
     }
 }
