@@ -5,3 +5,4 @@ mvnw
 HELP.md
 **/target/
 logs/
+log-parser/*.log
