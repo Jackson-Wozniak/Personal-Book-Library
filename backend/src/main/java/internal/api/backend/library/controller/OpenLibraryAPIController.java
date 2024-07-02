@@ -31,4 +31,9 @@ public class OpenLibraryAPIController {
     public ResponseEntity<BookResponse> getBookByISBN(@PathVariable("isbn") String isbn){
         return ResponseEntity.ok(openLibraryAPIClient.getBookByISBN(isbn));
     }
+
+    @GetMapping(value = "/cover_url/{isbn}")
+    public ResponseEntity<String> getCoverURL(@PathVariable("isbn") String isbn){
+        return ResponseEntity.ok(openLibraryAPIClient.getCoverURL(isbn));
+    }
 }

@@ -43,7 +43,8 @@ public class WebSecurityConfig {
     public String[] getPermittedEndpoints(){
         return new String[] {
                 "/api/v*/users/**",
-                "/api/v*/library/**"
+                "/api/v*/library/**",
+                "/api/v*/open_library/**"
         };
     }
 }
