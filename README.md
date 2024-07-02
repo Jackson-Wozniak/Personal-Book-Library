@@ -20,3 +20,38 @@
     ·
     <a href="https://github.com/Jackson-Wozniak/Personal-Book-Library/issues">Request Feature</a>
 </div>
+
+
+## :books: Table of Contents
+
+<ol>
+    <li><a href="#features">Features & Overview</a></li>
+    <li><a href="#local-dev">Local Deployment</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li>
+      <a href="#api-docs">Api Docs</a>
+      <ul>
+        <li><a href="#return-json">JSON Objects</a></li>
+        <li><a href="#user-library">User Library Endpoints</a></li>
+        <li><a href="#user">User Endpoints</a></li>
+        <li><a href="#open-library">Open Library Data Endpoints</a></li>
+      </ul>
+    </li>
+</ol>
+
+
+## :notebook: Features & Overview <a id="features"></a>
+
+## :pencil2: Local Deployment <a id="local-dev"></a>
+
+## 📝 Contributing <a id="contributing"></a>
+
+## 🔌 API Docs <a id="api-docs"></a>
+
+#### 💻 JSON Objects <a id="return-json"></a>
+
+#### 📖 User Library Endpoints <a id="user-library"></a>
+
+#### :pouting_man: User Endpoints <a id="user"></a>
+
+#### 📘: Open Library Data Endpoints <a id="open-library"></a>
