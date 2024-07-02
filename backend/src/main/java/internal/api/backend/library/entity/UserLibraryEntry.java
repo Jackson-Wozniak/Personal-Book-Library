@@ -2,6 +2,7 @@ package internal.api.backend.library.entity;
 
 import internal.api.backend.library.enums.OwnedBookSource;
 import internal.api.backend.library.enums.OwnedBookStatus;
+import internal.api.backend.library.payload.UserLibraryEntryDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,5 +39,9 @@ public class UserLibraryEntry {
         this.ownedBook = ownedBook;
         this.source = source;
         this.status = status;
+    }
+
+    public UserLibraryEntryDTO toDTO(){
+        return new UserLibraryEntryDTO(this);
     }
 }

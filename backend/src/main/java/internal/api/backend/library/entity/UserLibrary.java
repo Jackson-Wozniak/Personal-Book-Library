@@ -1,5 +1,6 @@
 package internal.api.backend.library.entity;
 
+import internal.api.backend.library.payload.UserLibraryDTO;
 import internal.api.backend.users.entity.User;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -28,6 +29,16 @@ public class UserLibrary {
     public UserLibrary(User user){
         this.username = user.getUsername();
         this.user = user;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(!(o instanceof UserLibrary)) return false;
+        return ((UserLibrary) o).getUsername().equals(this.username);
+    }
+
+    public UserLibraryDTO toDTO(){
+        return new UserLibraryDTO(this);
     }
 
     /*

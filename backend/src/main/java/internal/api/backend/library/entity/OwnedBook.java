@@ -1,6 +1,7 @@
 package internal.api.backend.library.entity;
 
 import internal.api.backend.library.entity.listener.OwnedBookListener;
+import internal.api.backend.library.payload.BookDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,5 +41,9 @@ public class OwnedBook {
         this.isbn = isbn;
         this.author = author;
         this.pageCount = pageCount;
+    }
+
+    public BookDTO toDTO(){
+        return new BookDTO(this);
     }
 }
