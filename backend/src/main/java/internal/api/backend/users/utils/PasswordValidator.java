@@ -6,6 +6,12 @@ public class PasswordValidator {
     private static final String lowercase = "abcdefghijklmnopqrstuvwxyz";
     private static final String specials = "!@#$%&*()'+,-./:;<=>?[]^_`{|}";
 
+    /*
+    Requirements for valid password:
+        - contains 8+ characters
+        - has 1+ of each: uppercase, lowercase, number, and special char
+        - does not contain spaces
+     */
     public static boolean containsRequiredComponents(String password){
         if(password.length() < 8) return false;
         boolean upper = false;
@@ -14,6 +20,7 @@ public class PasswordValidator {
         boolean special = false;
         for(int i = 0; i < password.length(); i++){
             char temp = password.charAt(i);
+            if(temp == ' ') return false;
             if(uppercase.contains(String.valueOf(temp))){
                 upper = true;
                 continue;
