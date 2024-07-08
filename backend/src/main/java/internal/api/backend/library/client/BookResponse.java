@@ -14,8 +14,9 @@ public class BookResponse {
 
     private String title;
     private String isbn;
+    private int pageCount;
     private String author;
-    private Integer pageCount;
+    private String publishDate;
 
     public BookResponse(Builder builder){
         this.title = builder.title.orElse("N/A");
@@ -35,6 +36,7 @@ public class BookResponse {
         private Optional<String> isbn;
         private Optional<String> author;
         private Optional<Integer> pageCount;
+        private Optional<String> publishDate;
 
         public Builder(String title){
             this.title = Optional.of(title);
@@ -45,9 +47,18 @@ public class BookResponse {
             return this;
         }
 
-        public Builder info(String author, int pageCount){
-            this.author = Optional.of(author);
+        public Builder pageCount(int pageCount){
             this.pageCount = Optional.of(pageCount);
+            return this;
+        }
+
+        public Builder publishDate(String publishDate){
+            this.publishDate = Optional.of(publishDate);
+            return this;
+        }
+
+        public Builder info(String author){
+            this.author = Optional.of(author);
             return this;
         }
 
